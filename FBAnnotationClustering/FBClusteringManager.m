@@ -27,19 +27,32 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
     NSInteger zoomLevel = FBZoomScaleToZoomLevel(zoomScale);
     
     switch (zoomLevel) {
+        case 9:
+            return 512;
+        case 10:
+            return 400;
+        case 11:
+            return 300;
+        case 12:
+            return 300;
         case 13:
+            return 300;
         case 14:
+            return 200;
         case 15:
-            return 64;
+            return 128;
         case 16:
+            return 64;
         case 17:
-        case 18:
-            return 32;
-        case 19:
             return 16;
+        case 18:
+        case 19:
+        case 20:
+        case 21:
+            return 10;
             
         default:
-            return 88;
+            return 512;
     }
 }
 

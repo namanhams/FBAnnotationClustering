@@ -190,10 +190,8 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
     NSMutableSet *toRemove = [NSMutableSet setWithSet:before];
     [toRemove minusSet:after];
     
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [mapView addAnnotations:[toAdd allObjects]];
-        [mapView removeAnnotations:[toRemove allObjects]];
-    }];
+    [mapView addAnnotations:[toAdd allObjects]];
+    [mapView removeAnnotations:[toRemove allObjects]];
 }
 
 @end

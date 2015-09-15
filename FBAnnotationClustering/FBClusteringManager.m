@@ -26,6 +26,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
 {
     NSInteger zoomLevel = FBZoomScaleToZoomLevel(zoomScale);
     
+    NSLog(@"zoom level %d", zoomLevel);
     switch (zoomLevel) {
         case 9:
             return 512;
@@ -38,13 +39,11 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
         case 13:
             return 300;
         case 14:
-            return 200;
         case 15:
-            return 128;
+            return 256;
         case 16:
-            return 64;
         case 17:
-            return 16;
+            return 64;
         case 18:
         case 19:
         case 20:
@@ -122,6 +121,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
     
     NSMutableArray *clusteredAnnotations = [[NSMutableArray alloc] init];
     
+    NSLog(@"%ld", (maxX - minX) * (maxY - minY));
     [self.lock lock];
     for (NSInteger x = minX; x <= maxX; x++) {
         for (NSInteger y = minY; y <= maxY; y++) {

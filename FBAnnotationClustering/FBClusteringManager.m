@@ -26,7 +26,6 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
 {
     NSInteger zoomLevel = FBZoomScaleToZoomLevel(zoomScale);
     
-    NSLog(@"zoom level %d", zoomLevel);
     switch (zoomLevel) {
         case 9:
             return 512;
@@ -43,7 +42,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
             return 256;
         case 16:
         case 17:
-            return 64;
+            return 128;
         case 18:
         case 19:
         case 20:

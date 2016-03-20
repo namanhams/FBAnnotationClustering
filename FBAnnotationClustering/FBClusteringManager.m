@@ -120,7 +120,6 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale)
     
     NSMutableArray *clusteredAnnotations = [[NSMutableArray alloc] init];
     
-    NSLog(@"%ld", (maxX - minX) * (maxY - minY));
     [self.lock lock];
     for (NSInteger x = minX; x <= maxX; x++) {
         for (NSInteger y = minY; y <= maxY; y++) {
